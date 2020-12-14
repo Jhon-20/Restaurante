@@ -1,0 +1,34 @@
+<div class="container-table100">
+    
+    <div class="wrap-table100">
+      <div class="table100 mb-4">
+
+        <form #forma="ngForm" (ngSubmit)="guardar(forma)">
+            <app-input-form (value)="agregar($event)"></app-input-form>
+            
+        </form>
+
+      </div>
+      <div class="table100">
+
+        <table>
+          <thead>
+            <tr class="table100-head">
+              <th class="column1">Restaurante</th>
+              <th class="column2">Ciudad</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+                <app-lista-body [items]="items" ></app-lista-body>
+                     
+           
+
+            
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>

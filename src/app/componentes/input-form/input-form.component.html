@@ -1,0 +1,22 @@
+<div class="row">
+<div class="col">
+    <input [(ngModel)]="restaurante" name="restaurante" minlength="8" #nombreForm="ngModel" required  [(ngModel)]="restaurante" (keyup.enter)="agregar()"  type="text" class="form-control" placeholder="Nombre del restaurante">
+    <div *ngIf="nombreForm.errors?.required">
+       Este campo es requerido
+    </div>  
+     <div *ngIf="nombreForm.errors?.minlength"  style="color: black;">
+        Este campo requiere por lo menos {{nombreForm.errors.minlength.requiredLength }} caracteres
+     </div>
+  </div>
+  <div class="col">
+    <input  [(ngModel)]="ciudad" name="ciudad" minlength="4" #itemForm2="ngModel" required [(ngModel)]="ciudad" (keyup.enter)="agregar()"   type="text"  class="form-control" placeholder="Ciudad">
+    <div *ngIf="itemForm2.errors?.required">
+      Este campo es requerido
+   </div>  
+    <div *ngIf="itemForm2.errors?.minlength" style="color: black;">
+       Este campo requiere por lo menos {{itemForm2.errors.minlength.requiredLength }} caracteres
+    </div>
+  </div>
+  <div class="col">
+  <button (click)="agregarClick()" class="btn btn-info" type="submit">agregar</button>
+  </div>
